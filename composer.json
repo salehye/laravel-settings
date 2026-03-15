@@ -1,0 +1,49 @@
+{
+    "name": "your-vendor/web-settings",
+    "description": "A flexible, extensible, multi-language, and enterprise-ready package for managing website settings in Laravel.",
+    "keywords": ["laravel", "settings", "package", "web-settings", "configuration"],
+    "homepage": "https://github.com/your-vendor/web-settings",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Your Name",
+            "email": "your@email.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^10.0|^11.0",
+        "illuminate/database": "^10.0|^11.0",
+        "illuminate/console": "^10.0|^11.0",
+        "illuminate/cache": "^10.0|^11.0",
+        "illuminate/validation": "^10.0|^11.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0",
+        "phpunit/phpunit": "^10.0|^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "YourVendor\\WebSettings\\": "src/"
+        },
+        "files": [
+            "src/Support/Helpers/helpers.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "YourVendor\\WebSettings\\Providers\\WebSettingsServiceProvider"
+            ],
+            "aliases": {
+                "WebSettings": "YourVendor\\WebSettings\\Facades\\WebSettings"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
