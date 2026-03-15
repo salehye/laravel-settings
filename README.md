@@ -1,22 +1,22 @@
-# WebSettings Laravel Package
+# Salehye\LaravelSettings Laravel Package
 
 ![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 
-WebSettings is a comprehensive Laravel package designed for flexible, extensible, multi-language, and enterprise-ready management of website settings. It provides a robust architecture based on Domain-Driven Design (DDD) principles, ensuring maintainability and scalability for your Laravel applications.
+Salehye\LaravelSettings is a comprehensive Laravel package designed for flexible, extensible, multi-language, and enterprise-ready management of website settings. It provides a robust architecture based on Domain-Driven Design (DDD) principles, ensuring maintainability and scalability for your Laravel applications.
 
 ## Features
 
--   **Flexible**: Easily define and manage various types of settings (string, integer, boolean, array, JSON, float).
--   **Extensible**: Designed with interfaces and services, allowing for easy customization and extension of core functionalities like caching and validation.
--   **Multi-language Support**: Built-in support for translating setting descriptions and values.
--   **Enterprise-ready**: Follows best practices for Laravel package development, including migrations, configuration, commands, and API endpoints.
--   **Caching**: Integrated caching mechanism to optimize performance for frequently accessed settings.
--   **Validation**: Custom validation rules can be defined for settings.
--   **Artisan Commands**: Convenient Artisan commands for installation and management.
--   **API Endpoints**: RESTful API for programmatic access and management of settings.
--   **Facade & Helper**: Easy access to settings via a Facade and a global helper function.
+- **Flexible**: Easily define and manage various types of settings (string, integer, boolean, array, JSON, float).
+- **Extensible**: Designed with interfaces and services, allowing for easy customization and extension of core functionalities like caching and validation.
+- **Multi-language Support**: Built-in support for translating setting descriptions and values.
+- **Enterprise-ready**: Follows best practices for Laravel package development, including migrations, configuration, commands, and API endpoints.
+- **Caching**: Integrated caching mechanism to optimize performance for frequently accessed settings.
+- **Validation**: Custom validation rules can be defined for settings.
+- **Artisan Commands**: Convenient Artisan commands for installation and management.
+- **API Endpoints**: RESTful API for programmatic access and management of settings.
+- **Facade & Helper**: Easy access to settings via a Facade and a global helper function.
 
 ## Installation
 
@@ -33,15 +33,16 @@ php artisan web-settings:install
 ```
 
 This command will:
--   Publish the `web-settings.php` configuration file to your `config` directory.
--   Publish the migration file to your `database/migrations` directory.
--   Run the migrations to create the `web_settings` table.
+
+- Publish the `web-settings.php` configuration file to your `config` directory.
+- Publish the migration file to your `database/migrations` directory.
+- Run the migrations to create the `web_settings` table.
 
 Alternatively, you can publish the files manually:
 
 ```bash
-php artisan vendor:publish --provider="YourVendor\WebSettings\Providers\WebSettingsServiceProvider" --tag="web-settings-config"
-php artisan vendor:publish --provider="YourVendor\WebSettings\Providers\WebSettingsServiceProvider" --tag="web-settings-migrations"
+php artisan vendor:publish --provider="Salehye\LaravelSettings\Providers\Salehye\LaravelSettingsServiceProvider" --tag="web-settings-config"
+php artisan vendor:publish --provider="Salehye\LaravelSettings\Providers\Salehye\LaravelSettingsServiceProvider" --tag="web-settings-migrations"
 php artisan migrate
 ```
 
@@ -84,7 +85,7 @@ You can retrieve settings using the `Settings` Facade or the `web_setting()` hel
 
 ```php
 // Using the Facade
-use YourVendor\WebSettings\Support\Facades\Settings;
+use Salehye\LaravelSettings\Support\Facades\Settings;
 
 $appName = Settings::get('app_name', 'Default App Name');
 
@@ -115,12 +116,12 @@ Settings::forget('old_setting_key');
 
 The package provides the following API endpoints (prefixed with `/api/web-settings`):
 
-| Method | URI                 | Action   | Middleware         |
-| :----- | :------------------ | :------- | :----------------- |
-| `GET`  | `/`                 | `index`  | `api`, `auth:sanctum` |
-| `GET`  | `/{key}`            | `show`   | `api`, `auth:sanctum` |
-| `PUT`  | `/{key}`            | `update` | `api`, `auth:sanctum` |
-| `DELETE` | `/{key}`            | `destroy`| `api`, `auth:sanctum` |
+| Method   | URI      | Action    | Middleware            |
+| :------- | :------- | :-------- | :-------------------- |
+| `GET`    | `/`      | `index`   | `api`, `auth:sanctum` |
+| `GET`    | `/{key}` | `show`    | `api`, `auth:sanctum` |
+| `PUT`    | `/{key}` | `update`  | `api`, `auth:sanctum` |
+| `DELETE` | `/{key}` | `destroy` | `api`, `auth:sanctum` |
 
 Example API usage with `PUT` request:
 
@@ -144,4 +145,4 @@ Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for det
 
 ## License
 
-The WebSettings Laravel Package is open-sourced software licensed under the [MIT license](LICENSE.md).
+The Salehye\LaravelSettings Laravel Package is open-sourced software licensed under the [MIT license](LICENSE.md).

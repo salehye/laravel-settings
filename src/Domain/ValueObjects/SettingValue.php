@@ -1,6 +1,6 @@
 <?php
 
-namespace YourVendor\WebSettings\Domain\ValueObjects;
+namespace Salehye\LaravelSettings\Domain\ValueObjects;
 
 class SettingValue
 {

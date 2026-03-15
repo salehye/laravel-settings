@@ -1,6 +1,6 @@
 <?php
 
-namespace YourVendor\WebSettings\Console\Commands;
+namespace Salehye\LaravelSettings\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
@@ -8,22 +8,22 @@ use Illuminate\Support\Facades\File;
 class InstallCommand extends Command
 {
     protected $signature = 'web-settings:install';
-    protected $description = 'Install the WebSettings package';
+    protected $description = 'Install the Salehye\LaravelSettings package';
 
     public function handle(): void
     {
-        $this->info('Installing WebSettings...');
+        $this->info('Installing Salehye\LaravelSettings...');
 
         $this->publishConfiguration();
         $this->publishMigrations();
 
-        $this->info('WebSettings installed successfully.');
+        $this->info('Salehye\LaravelSettings installed successfully.');
     }
 
     private function publishConfiguration(): void
     {
         $this->call('vendor:publish', [
-            '--provider' => "YourVendor\WebSettings\Providers\WebSettingsServiceProvider",
+            '--provider' => "Salehye\LaravelSettings\Providers\Salehye\LaravelSettingsServiceProvider",
             '--tag' => 'web-settings-config',
         ]);
     }
@@ -31,7 +31,7 @@ class InstallCommand extends Command
     private function publishMigrations(): void
     {
         $this->call('vendor:publish', [
-            '--provider' => "YourVendor\WebSettings\Providers\WebSettingsServiceProvider",
+            '--provider' => "Salehye\LaravelSettings\Providers\Salehye\LaravelSettingsServiceProvider",
             '--tag' => 'web-settings-migrations',
         ]);
     }

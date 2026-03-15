@@ -1,14 +1,14 @@
 <?php
 
-namespace YourVendor\WebSettings\Providers;
+namespace Salehye\LaravelSettings\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use YourVendor\WebSettings\Application\Services\SettingsService;
-use YourVendor\WebSettings\Contracts\SettingsRepositoryInterface;
-use YourVendor\WebSettings\Infrastructure\Persistence\Repositories\CachedSettingsRepository;
-use YourVendor\WebSettings\Infrastructure\Persistence\Repositories\EloquentSettingsRepository;
+use Salehye\LaravelSettings\Application\Services\SettingsService;
+use Salehye\LaravelSettings\Contracts\SettingsRepositoryInterface;
+use Salehye\LaravelSettings\Infrastructure\Persistence\Repositories\CachedSettingsRepository;
+use Salehye\LaravelSettings\Infrastructure\Persistence\Repositories\EloquentSettingsRepository;
 
-class WebSettingsServiceProvider extends ServiceProvider
+class SettingsServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
@@ -35,7 +35,7 @@ class WebSettingsServiceProvider extends ServiceProvider
             ], 'web-settings-migrations');
 
             $this->commands([
-                \YourVendor\WebSettings\Console\Commands\InstallCommand::class,
+                \Salehye\LaravelSettings\Console\Commands\InstallCommand::class,
             ]);
         }
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace YourVendor\WebSettings\Application\DTOs;
+namespace Salehye\LaravelSettings\Application\DTOs;
 
-use YourVendor\WebSettings\Domain\Models\Setting;
-use YourVendor\WebSettings\Domain\ValueObjects\SettingKey;
-use YourVendor\WebSettings\Domain\ValueObjects\SettingType;
-use YourVendor\WebSettings\Domain\ValueObjects\SettingValue;
+use Salehye\LaravelSettings\Domain\Models\Setting;
+use Salehye\LaravelSettings\Domain\ValueObjects\SettingKey;
+use Salehye\LaravelSettings\Domain\ValueObjects\SettingType;
+use Salehye\LaravelSettings\Domain\ValueObjects\SettingValue;
 
 class SettingData
 {
@@ -15,7 +15,8 @@ class SettingData
         public readonly string $type = SettingType::STRING,
         public readonly ?string $group = null,
         public readonly ?string $description = null
-    ) {}
+    ) {
+    }
 
     public static function fromModel(Setting $setting): self
     {

@@ -1,15 +1,16 @@
 <?php
 
-namespace YourVendor\WebSettings\Application\UseCases;
+namespace Salehye\LaravelSettings\Application\UseCases;
 
-use YourVendor\WebSettings\Application\DTOs\SettingData;
-use YourVendor\WebSettings\Application\Services\SettingsService;
+use Salehye\LaravelSettings\Application\DTOs\SettingData;
+use Salehye\LaravelSettings\Application\Services\SettingsService;
 
 class UpdateSettingUseCase
 {
     public function __construct(
         protected SettingsService $service
-    ) {}
+    ) {
+    }
 
     public function execute(string $key, mixed $value, ?string $type = null, ?string $group = null, ?string $description = null): SettingData
     {

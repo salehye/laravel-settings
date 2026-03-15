@@ -1,6 +1,6 @@
 <?php
 
-namespace YourVendor\WebSettings\Infrastructure\Http\Requests;
+namespace Salehye\LaravelSettings\Infrastructure\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

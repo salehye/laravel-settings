@@ -1,15 +1,15 @@
 <?php
 
-namespace YourVendor\WebSettings\Tests;
+namespace Salehye\LaravelSettings\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
-use YourVendor\WebSettings\Providers\WebSettingsServiceProvider;
+use Salehye\LaravelSettings\Providers\Salehye\LaravelSettingsServiceProvider;
 
 abstract class TestCase extends Orchestra
 {
     protected function getPackageProviders($app)
     {
-        return [WebSettingsServiceProvider::class];
+        return [Salehye\LaravelSettingsServiceProvider::class];
     }
 
     protected function getEnvironmentSetUp($app)

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use YourVendor\WebSettings\Infrastructure\Http\Controllers\Api\SettingsApiController;
+use Salehye\LaravelSettings\Infrastructure\Http\Controllers\Api\SettingsApiController;
 
 Route::prefix('api/web-settings')->middleware(config('web-settings.api_middleware'))->group(function () {
     Route::get('/', [SettingsApiController::class, 'index'])->name('api.web-settings.index');

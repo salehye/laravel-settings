@@ -1,10 +1,10 @@
 <?php
 
-namespace YourVendor\WebSettings\Domain\Events;
+namespace Salehye\LaravelSettings\Domain\Events;
 
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
-use YourVendor\WebSettings\Domain\Models\Setting;
+use Salehye\LaravelSettings\Domain\Models\Setting;
 
 class SettingUpdated
 {

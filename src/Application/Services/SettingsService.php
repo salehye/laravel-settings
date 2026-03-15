@@ -1,24 +1,25 @@
 <?php
 
-namespace YourVendor\WebSettings\Application\Services;
+namespace Salehye\LaravelSettings\Application\Services;
 
-use YourVendor\WebSettings\Application\DTOs\SettingData;
-use YourVendor\WebSettings\Contracts\SettingsRepositoryInterface;
-use YourVendor\WebSettings\Domain\Events\SettingUpdated;
-use YourVendor\WebSettings\Domain\ValueObjects\SettingKey;
-use YourVendor\WebSettings\Domain\ValueObjects\SettingType;
-use YourVendor\WebSettings\Domain\ValueObjects\SettingValue;
+use Salehye\LaravelSettings\Application\DTOs\SettingData;
+use Salehye\LaravelSettings\Contracts\SettingsRepositoryInterface;
+use Salehye\LaravelSettings\Domain\Events\SettingUpdated;
+use Salehye\LaravelSettings\Domain\ValueObjects\SettingKey;
+use Salehye\LaravelSettings\Domain\ValueObjects\SettingType;
+use Salehye\LaravelSettings\Domain\ValueObjects\SettingValue;
 
 class SettingsService
 {
     public function __construct(
         protected SettingsRepositoryInterface $repository
-    ) {}
+    ) {
+    }
 
     public function get(string $key, mixed $default = null): mixed
     {
         $setting = $this->repository->findByKey(new SettingKey($key));
-        
+
         if (!$setting) {
             return $default;
         }
@@ -61,10 +62,14 @@ class SettingsService
 
     protected function detectType(mixed $value): string
     {
-        if (is_int($value)) return SettingType::INTEGER;
-        if (is_float($value)) return SettingType::FLOAT;
-        if (is_bool($value)) return SettingType::BOOLEAN;
-        if (is_array($value)) return SettingType::ARRAY;
+        if (is_int($value))
+            return SettingType::INTEGER;
+        if (is_float($value))
+            return SettingType::FLOAT;
+        if (is_bool($value))
+            return SettingType::BOOLEAN;
+        if (is_array($value))
+            return SettingType::ARRAY;
         return SettingType::STRING;
     }
 }

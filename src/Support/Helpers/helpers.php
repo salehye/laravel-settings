@@ -1,6 +1,6 @@
 <?php
 
-use YourVendor\WebSettings\Support\Facades\Settings;
+use Salehye\LaravelSettings\Support\Facades\Settings;
 
 if (!function_exists('web_setting')) {
     /**
@@ -8,7 +8,7 @@ if (!function_exists('web_setting')) {
      *
      * @param string|null $key
      * @param mixed|null $default
-     * @return mixed|\YourVendor\WebSettings\Application\Services\SettingsService
+     * @return mixed|\Salehye\LaravelSettings\Application\Services\SettingsService
      */
     function web_setting(?string $key = null, mixed $default = null)
     {

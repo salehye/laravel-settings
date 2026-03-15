@@ -1,6 +1,6 @@
 <?php
 
-namespace YourVendor\WebSettings\Domain\ValueObjects;
+namespace Salehye\LaravelSettings\Domain\ValueObjects;
 
 class SettingType
 {
@@ -29,7 +29,7 @@ class SettingType
             self::STRING,
             self::INTEGER,
             self::BOOLEAN,
-            self::ARRAY,
+            self::ARRAY ,
             self::JSON,
             self::FLOAT,
         ];

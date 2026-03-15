@@ -1,18 +1,19 @@
 <?php
 
-namespace YourVendor\WebSettings\Infrastructure\Http\Controllers\Api;
+namespace Salehye\LaravelSettings\Infrastructure\Http\Controllers\Api;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller;
-use YourVendor\WebSettings\Application\Services\SettingsService;
-use YourVendor\WebSettings\Infrastructure\Http\Requests\UpdateSettingRequest;
-use YourVendor\WebSettings\Infrastructure\Http\Resources\SettingResource;
+use Salehye\LaravelSettings\Application\Services\SettingsService;
+use Salehye\LaravelSettings\Infrastructure\Http\Requests\UpdateSettingRequest;
+use Salehye\LaravelSettings\Infrastructure\Http\Resources\SettingResource;
 
 class SettingsApiController extends Controller
 {
     public function __construct(
         protected SettingsService $service
-    ) {}
+    ) {
+    }
 
     public function index(): JsonResponse
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace YourVendor\WebSettings\Domain\Exceptions;
+namespace Salehye\LaravelSettings\Domain\Exceptions;
 
 use Exception;
 

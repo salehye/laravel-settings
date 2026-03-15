@@ -1,49 +1,98 @@
 {
-    "name": "your-vendor/web-settings",
-    "description": "A flexible, extensible, multi-language, and enterprise-ready package for managing website settings in Laravel.",
-    "keywords": ["laravel", "settings", "package", "web-settings", "configuration"],
-    "homepage": "https://github.com/your-vendor/web-settings",
+    "name": "salehye/laravel-settings",
+    "description": "باكج احترافي متكامل لإدارة إعدادات المواقع في لارافل مع دعم الترجمة والتخزين المؤقت",
+    "keywords": [
+        "laravel", 
+        "settings", 
+        "package", 
+        "laravel-settings", 
+        "configuration",
+        "multi-language",
+        "admin",
+        "web-settings",
+        "salehye"
+    ],
+    "homepage": "https://github.com/salehye/laravel-settings",
     "license": "MIT",
     "authors": [
         {
-            "name": "Your Name",
-            "email": "your@email.com",
+            "name": "Saleh",
+            "email": "saleh@example.com",
+            "homepage": "https://github.com/salehye",
             "role": "Developer"
         }
     ],
+    "support": {
+        "email": "saleh@example.com",
+        "issues": "https://github.com/salehye/laravel-settings/issues",
+        "docs": "https://github.com/salehye/laravel-settings/wiki",
+        "source": "https://github.com/salehye/laravel-settings"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/salehye"
+        }
+    ],
     "require": {
-        "php": "^8.2",
-        "illuminate/support": "^10.0|^11.0",
-        "illuminate/database": "^10.0|^11.0",
-        "illuminate/console": "^10.0|^11.0",
-        "illuminate/cache": "^10.0|^11.0",
-        "illuminate/validation": "^10.0|^11.0"
+        "php": "^8.1|^8.2|^8.3",
+        "illuminate/support": "^9.0|^10.0|^11.0",
+        "illuminate/database": "^9.0|^10.0|^11.0",
+        "illuminate/console": "^9.0|^10.0|^11.0",
+        "illuminate/cache": "^9.0|^10.0|^11.0",
+        "illuminate/validation": "^9.0|^10.0|^11.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^8.0|^9.0",
-        "phpunit/phpunit": "^10.0|^11.0"
+        "orchestra/testbench": "^7.0|^8.0|^9.0",
+        "phpunit/phpunit": "^9.6|^10.0|^11.0",
+        "laravel/pint": "^1.13",
+        "phpstan/phpstan": "^1.10"
     },
     "autoload": {
         "psr-4": {
-            "YourVendor\\WebSettings\\": "src/"
+            "Salehye\\LaravelSettings\\": "src/"
         },
         "files": [
             "src/Support/Helpers/helpers.php"
         ]
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Salehye\\LaravelSettings\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "format": "vendor/bin/pint",
+        "analyse": "vendor/bin/phpstan analyse",
+        "all": [
+            "@format",
+            "@analyse",
+            "@test"
+        ]
+    },
     "extra": {
         "laravel": {
             "providers": [
-                "YourVendor\\WebSettings\\Providers\\WebSettingsServiceProvider"
+                "Salehye\\LaravelSettings\\Providers\\SettingsServiceProvider"
             ],
             "aliases": {
-                "WebSettings": "YourVendor\\WebSettings\\Facades\\WebSettings"
+                "Settings": "Salehye\\LaravelSettings\\Support\\Facades\\Settings"
             }
         }
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "preferred-install": "dist"
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/salehye/laravel-settings"
+        }
+    ]
 }

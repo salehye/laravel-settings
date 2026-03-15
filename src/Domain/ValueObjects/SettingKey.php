@@ -1,8 +1,8 @@
 <?php
 
-namespace YourVendor\WebSettings\Domain\ValueObjects;
+namespace Salehye\LaravelSettings\Domain\ValueObjects;
 
-use YourVendor\WebSettings\Domain\Exceptions\InvalidSettingKeyException;
+use Salehye\LaravelSettings\Domain\Exceptions\InvalidSettingKeyException;
 
 class SettingKey
 {

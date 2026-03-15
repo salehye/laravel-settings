@@ -1,11 +1,11 @@
 <?php
 
-namespace YourVendor\WebSettings\Infrastructure\Persistence\Repositories;
+namespace Salehye\LaravelSettings\Infrastructure\Persistence\Repositories;
 
 use Illuminate\Support\Collection;
-use YourVendor\WebSettings\Contracts\SettingsRepositoryInterface;
-use YourVendor\WebSettings\Domain\Models\Setting;
-use YourVendor\WebSettings\Domain\ValueObjects\SettingKey;
+use Salehye\LaravelSettings\Contracts\SettingsRepositoryInterface;
+use Salehye\LaravelSettings\Domain\Models\Setting;
+use Salehye\LaravelSettings\Domain\ValueObjects\SettingKey;
 
 class EloquentSettingsRepository implements SettingsRepositoryInterface
 {

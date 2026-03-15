@@ -1,6 +1,6 @@
 <?php
 
-namespace YourVendor\WebSettings\Infrastructure\Http\Resources;
+namespace Salehye\LaravelSettings\Infrastructure\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 

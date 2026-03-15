@@ -1,6 +1,6 @@
 <?php
 
-namespace YourVendor\WebSettings\Domain\Models;
+namespace Salehye\LaravelSettings\Domain\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

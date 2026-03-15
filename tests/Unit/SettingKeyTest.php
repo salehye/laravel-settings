@@ -1,10 +1,10 @@
 <?php
 
-namespace YourVendor\WebSettings\Tests\Unit;
+namespace Salehye\LaravelSettings\Tests\Unit;
 
-use YourVendor\WebSettings\Domain\Exceptions\InvalidSettingKeyException;
-use YourVendor\WebSettings\Domain\ValueObjects\SettingKey;
-use YourVendor\WebSettings\Tests\TestCase;
+use Salehye\LaravelSettings\Domain\Exceptions\InvalidSettingKeyException;
+use Salehye\LaravelSettings\Domain\ValueObjects\SettingKey;
+use Salehye\LaravelSettings\Tests\TestCase;
 
 class SettingKeyTest extends TestCase
 {

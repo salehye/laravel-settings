@@ -1,18 +1,19 @@
 <?php
 
-namespace YourVendor\WebSettings\Infrastructure\Persistence\Repositories;
+namespace Salehye\LaravelSettings\Infrastructure\Persistence\Repositories;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
-use YourVendor\WebSettings\Contracts\SettingsRepositoryInterface;
-use YourVendor\WebSettings\Domain\Models\Setting;
-use YourVendor\WebSettings\Domain\ValueObjects\SettingKey;
+use Salehye\LaravelSettings\Contracts\SettingsRepositoryInterface;
+use Salehye\LaravelSettings\Domain\Models\Setting;
+use Salehye\LaravelSettings\Domain\ValueObjects\SettingKey;
 
 class CachedSettingsRepository implements SettingsRepositoryInterface
 {
     public function __construct(
         protected EloquentSettingsRepository $repository
-    ) {}
+    ) {
+    }
 
     public function findByKey(SettingKey $key): ?Setting
     {
@@ -31,7 +32,7 @@ class CachedSettingsRepository implements SettingsRepositoryInterface
     public function updateOrCreate(SettingKey $key, array $data): Setting
     {
         $setting = $this->repository->updateOrCreate($key, $data);
-        
+
         if (config('web-settings.cache.enabled')) {
             Cache::forget($this->getCacheKey($key->getValue()));
             Cache::forget($this->getCacheKey('all_settings'));
