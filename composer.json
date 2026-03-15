@@ -2,10 +2,10 @@
     "name": "salehye/laravel-settings",
     "description": "باكج احترافي متكامل لإدارة إعدادات المواقع في لارافل مع دعم الترجمة والتخزين المؤقت",
     "keywords": [
-        "laravel", 
-        "settings", 
-        "package", 
-        "laravel-settings", 
+        "laravel",
+        "settings",
+        "package",
+        "laravel-settings",
         "configuration",
         "multi-language",
         "admin",
@@ -89,10 +89,14 @@
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
-    "repositories": [
-        {
+    "repositories": {
+        "settings": {
+            "type": "vcs",
+            "url": "https://github.com/salehye/laravel-settings.git"
+        },
+        "0": {
             "type": "vcs",
             "url": "https://github.com/salehye/laravel-settings"
         }
-    ]
+    }
 }
